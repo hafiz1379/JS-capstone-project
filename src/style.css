@@ -8,4 +8,6 @@
 
 body {
   background-color: var(--header-blue);
+  font-family: "Zilla Slab", sans-serif;
+  color:white;
 }

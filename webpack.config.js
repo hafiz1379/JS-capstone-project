@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const GoogleFontsPlugin = require('google-fonts-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -17,7 +18,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Development',
       template: './src/index.html',
+      fonts: [
+        { family: 'Zilla Slab' }, // Add 'Zilla Slab' to the fonts array
+      ],
+      formats: ['woff2', 'woff'],
     }),
+    
   ],
   output: {
     filename: '[name].bundle.js',
