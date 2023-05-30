@@ -1,11 +1,3 @@
-:root {
-  --header-blue: #00296b;
-  --body-blue: #00509d;
-  --button-blue: #8ecae6;
-  --main-orange: #fb8500;
-  --button-yellow: #ffd500;
-}
-
 body {
-  background-color: var(--header-blue);
+  background-color: bisque;
 }
