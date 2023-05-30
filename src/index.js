@@ -1,11 +1,11 @@
 import './style.css';
 import Icon from './images/nitro-logo.png';
+
 const $ = document;
 
 // Find the logo image element and set its src attribute
 const logoImage = $.querySelector('.logo');
 logoImage.src = Icon;
-
 
 const apiUrl = 'https://api.tvmaze.com/shows';
 const movieCardsContainer = $.getElementById('movie-cards');
