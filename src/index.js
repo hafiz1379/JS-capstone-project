@@ -19,7 +19,9 @@ async function fetchMovieData(showId) {
     image: data.image.medium,
     summary: data.summary,
     genres: data.genres,
-    id: data.id,
+    id: data.id, 
+    showStatus: data.status,
+    premiered: data.premiered,
   };
 }
 
@@ -38,7 +40,7 @@ function createMovieCard(movieData) {
  // event listener for every comment button
   const id=movieData.id;
   comment.addEventListener('click', function() {
-    showComments(id);
+    showComments(movieData);
   });
   
 
