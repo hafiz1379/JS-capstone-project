@@ -1,3 +1,4 @@
+import fetchData from "./loadSaveComment.js";
 const showComments = (movieData) => {
   const $ = document;
   const movieCardsContainer = $.getElementById('movie-cards');
@@ -62,6 +63,8 @@ const showComments = (movieData) => {
 
   popUp.appendChild(popCard);
   movieCardsContainer.appendChild(popUp);
+
+  fetchData(movieData);
 };
 
 export default showComments;
