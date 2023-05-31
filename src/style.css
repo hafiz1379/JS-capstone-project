@@ -173,3 +173,16 @@ h2 {
   height: 20vh;
   overflow-y: scroll;
 }
+
+.closeButton {
+  width: fit-content;
+  font-size: xx-large;
+  background-color: transparent;
+  border-width: 0;
+  align-self: flex-end;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+  background-color: var(--button-yellow);
+}

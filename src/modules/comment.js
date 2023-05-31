@@ -8,6 +8,13 @@ const showComments = (movieData) => {
   const popCard = $.createElement('div');
   popCard.classList.add('popCard');
 
+  const closeButton = $.createElement('button');
+  closeButton.classList.add('closeButton');
+  closeButton.innerText = 'X';
+  closeButton.addEventListener('click', () => {
+    movieCardsContainer.removeChild(popUp);
+  });
+
   const newImage = $.createElement('img');
   newImage.classList.add('commentImage');
   newImage.src = movieData.image;
@@ -41,6 +48,7 @@ const showComments = (movieData) => {
   const sendButton = $.createElement('button');
   sendButton.innerText = 'Send';
 
+  popCard.appendChild(closeButton);
   popCard.appendChild(newImage);
   popCard.appendChild(title);
   popCard.appendChild(status);
