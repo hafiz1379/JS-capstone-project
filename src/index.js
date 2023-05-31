@@ -1,5 +1,6 @@
 import './style.css';
 import Icon from './images/nitro-logo.png';
+import showComments from './modules/comment.js';
 
 const $ = document;
 
@@ -18,6 +19,7 @@ async function fetchMovieData(showId) {
     image: data.image.medium,
     summary: data.summary,
     genres: data.genres,
+    id: data.id,
   };
 }
 
@@ -32,6 +34,13 @@ function createMovieCard(movieData) {
   image.src = movieData.image;
   const comment = $.createElement('button');
   comment.innerHTML = 'Comment';
+
+ // event listener for every comment button
+  const id=movieData.id;
+  comment.addEventListener('click', function() {
+    showComments(id);
+  });
+  
 
   const genres = $.createElement('p');
   genres.innerHTML = `<strong>Genres:</strong> ${movieData.genres.join(', ')}`;
