@@ -19,7 +19,7 @@ async function fetchMovieData(showId) {
     image: data.image.medium,
     summary: data.summary,
     genres: data.genres,
-    id: data.id, 
+    id: data.id,
     showStatus: data.status,
     premiered: data.premiered,
   };
@@ -37,12 +37,10 @@ function createMovieCard(movieData) {
   const comment = $.createElement('button');
   comment.innerHTML = 'Comment';
 
- // event listener for every comment button
-  const id=movieData.id;
-  comment.addEventListener('click', function() {
+  // event listener for every comment button
+  comment.addEventListener('click', () => {
     showComments(movieData);
   });
-  
 
   const genres = $.createElement('p');
   genres.innerHTML = `<strong>Genres:</strong> ${movieData.genres.join(', ')}`;

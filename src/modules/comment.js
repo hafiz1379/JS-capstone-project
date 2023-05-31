@@ -64,5 +64,4 @@ const showComments = (movieData) => {
   movieCardsContainer.appendChild(popUp);
 };
 
-
 export default showComments;
