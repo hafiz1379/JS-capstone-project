@@ -32,6 +32,7 @@ const showComments = (movieData) => {
   premiered.innerHTML = `premiered: ${movieData.premiered}`;
 
   const commentTitle = $.createElement('h3');
+  commentTitle.classList.add('commentNumber');
   commentTitle.innerHTML = 'Comments';
 
   const commentSection = $.createElement('div');
