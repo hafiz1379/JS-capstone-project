@@ -7,7 +7,7 @@ const fetchData = async (movieData) => {
     const data = await response.json();
 
     // Process the retrieved data
-    data.forEach(element => {
+    data.forEach((element) => {
       const toAdd = document.createElement('p');
       toAdd.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
       commentSection.appendChild(toAdd);

@@ -1,4 +1,5 @@
-import fetchData from "./loadSaveComment.js";
+import fetchData from './loadSaveComment.js';
+
 const showComments = (movieData) => {
   const $ = document;
   const movieCardsContainer = $.getElementById('movie-cards');
