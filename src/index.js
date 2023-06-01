@@ -60,7 +60,7 @@ const createMovieCard = async (movieData, showId) => {
   const comment = $.createElement('button');
   comment.innerHTML = 'Comment';
 
-    const likeBtn = document.createElement('button');
+  const likeBtn = document.createElement('button');
   likeBtn.classList.add('likes');
   likeBtn.innerHTML = 'Like';
 
