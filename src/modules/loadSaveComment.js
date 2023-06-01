@@ -1,6 +1,7 @@
 const fetchData = async (movieData) => {
   const API = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/X5Vx3TOWxyak1SgHIAAo/comments?item_id=${movieData.id}`;
   const commentSection = document.querySelector('.commentSection');
+  commentSection.innerHTML = '';
 
   try {
     const response = await fetch(API);
@@ -17,4 +18,27 @@ const fetchData = async (movieData) => {
   }
 };
 
-export default fetchData;
+const saveData = async (movieData) => {
+  const API = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/X5Vx3TOWxyak1SgHIAAo/comments`;
+  const username = document.querySelector('.commentName');
+  const comment = document.querySelector('.commentMessage');
+
+  const commentObject = {
+    item_id: movieData.id,
+    username: username.value,
+    comment: comment.value
+  }
+  await fetch(API, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(commentObject),
+  });
+
+  username.value = '';
+  comment.value = '';
+};
+
+
+export {fetchData, saveData};
