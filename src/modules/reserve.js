@@ -8,6 +8,7 @@ export default class Reserve {
 
   createTemplate() {
     const reserveCard = document.getElementById('reserveCard');
+    reserveCard.innerHTML = '';
 
     const modalContent = document.createElement('div');
     modalContent.classList.add('modalContent');
@@ -16,7 +17,7 @@ export default class Reserve {
     popUp.classList.add('popUpR');
 
     const span = document.createElement('button');
-    span.classList.add('close');
+    span.classList.add('closeButton');
     span.textContent = 'X';
     popUp.appendChild(span);
 
