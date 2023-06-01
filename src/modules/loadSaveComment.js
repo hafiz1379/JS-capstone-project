@@ -1,4 +1,5 @@
-import commentCounter from "./commentCounter.js";
+import commentCounter from './commentCounter.js';
+
 const fetchData = async (movieData) => {
   const API = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/X5Vx3TOWxyak1SgHIAAo/comments?item_id=${movieData.id}`;
   const commentSection = document.querySelector('.commentSection');
@@ -8,13 +9,13 @@ const fetchData = async (movieData) => {
     const response = await fetch(API);
     const data = await response.json();
 
-    if(data.length>0) {
+    if (data.length > 0) {
       data.forEach((element) => {
-      const toAdd = document.createElement('p');
-      toAdd.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
-      commentSection.appendChild(toAdd);
-      commentCounter(data);
-    });
+        const toAdd = document.createElement('p');
+        toAdd.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
+        commentSection.appendChild(toAdd);
+        commentCounter(data);
+      });
     } else {
       commentSection.innerHTML = 'No comments yet';
       commentCounter([]);
@@ -30,8 +31,12 @@ const saveData = async (movieData) => {
   const username = document.querySelector('.commentName');
   const comment = document.querySelector('.commentMessage');
 
-  if (username.value === '' || comment.value === '') {
-    console.log('Username and comment cannot be empty.');
+  const usernameValue = username.value.trim();
+  const commentValue = comment.value.trim();
+
+  if (usernameValue === '' || commentValue === '') {
+    username.setAttribute('placeholder', 'Please enter your name');
+    comment.setAttribute('placeholder', 'Please enter your comment');
     return;
   }
 
