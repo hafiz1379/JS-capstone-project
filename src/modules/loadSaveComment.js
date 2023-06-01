@@ -30,6 +30,11 @@ const saveData = async (movieData) => {
   const username = document.querySelector('.commentName');
   const comment = document.querySelector('.commentMessage');
 
+  if (username.value === '' || comment.value === '') {
+    console.log('Username and comment cannot be empty.');
+    return;
+  }
+
   const commentObject = {
     item_id: movieData.id,
     username: username.value,
