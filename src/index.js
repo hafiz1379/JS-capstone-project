@@ -49,7 +49,7 @@ const updateLikesData = async (showId, likes) => {
 const createMovieCard = async (movieData, showId) => {
   const card = $.createElement('div');
   card.classList.add('movie-card');
-   card.id = `movie-${showId}`;
+  card.id = `movie-${showId}`;
 
   const title = $.createElement('h2');
   title.innerText = movieData.name;
