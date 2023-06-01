@@ -19,15 +19,15 @@ const fetchData = async (movieData) => {
 };
 
 const saveData = async (movieData) => {
-  const API = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/X5Vx3TOWxyak1SgHIAAo/comments`;
+  const API = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/X5Vx3TOWxyak1SgHIAAo/comments';
   const username = document.querySelector('.commentName');
   const comment = document.querySelector('.commentMessage');
 
   const commentObject = {
     item_id: movieData.id,
     username: username.value,
-    comment: comment.value
-  }
+    comment: comment.value,
+  };
   await fetch(API, {
     method: 'POST',
     headers: {
@@ -40,5 +40,4 @@ const saveData = async (movieData) => {
   comment.value = '';
 };
 
-
-export {fetchData, saveData};
+export { fetchData, saveData };

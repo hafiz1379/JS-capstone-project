@@ -1,4 +1,4 @@
-import {fetchData, saveData} from './loadSaveComment.js';
+import { fetchData, saveData } from './loadSaveComment.js';
 
 const showComments = (movieData) => {
   const $ = document;
