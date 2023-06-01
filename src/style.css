@@ -186,3 +186,51 @@ h2 {
   cursor: pointer;
   background-color: var(--button-yellow);
 }
+
+#reserveCard {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(177, 174, 174, 0.8); /* Black w/ opacity */
+}
+
+.modalContent {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  background-color: var(--body-blue);
+  margin: auto;
+  margin-top: 3vh;
+  padding: 20px;
+  border: 5px solid var(--main-orange);
+  color: #fff;
+}
+
+.popUpR {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.popImg {
+  display: flex;
+  justify-content: center;
+  padding: 3vh 0;
+}
+
+.imgReserve {
+  width: 20%;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 5vh;
+  width: 100%;
+  gap: 2vh;
+}
