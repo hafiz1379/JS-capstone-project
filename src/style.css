@@ -133,6 +133,10 @@ h2 {
   color: #fff;
 }
 
+.likes {
+  display: none;
+}
+
 .popUp {
   position: fixed;
   top: 0;
