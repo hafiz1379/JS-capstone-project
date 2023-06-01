@@ -22,7 +22,7 @@ const fetchData = async (movieData) => {
     }
     // Process the retrieved data
   } catch (error) {
-    console.error('An error occurred:', error);
+    commentSection.innerHTML = 'An error has occured while loading the comments';
   }
 };
 
