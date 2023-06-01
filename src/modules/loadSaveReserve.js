@@ -10,7 +10,7 @@ const fetchData = async (movieData) => {
 
     // Process the retrieved data
     data.forEach((element) => {
-      toAddReserve.innerHTML = `
+      toAddReserve.innerHTML += `
       <p>${element.date_start} - ${element.date_end} by ${element.username}</p>
       `;
       reserveSection.appendChild(toAddReserve);

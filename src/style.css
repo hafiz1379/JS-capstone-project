@@ -257,4 +257,5 @@ h2 {
   width: 100%;
   padding: 2vh 3vh;
   align-items: center;
+  gap: 1vh;
 }
