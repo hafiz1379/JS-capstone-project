@@ -1,4 +1,4 @@
-import fetchData from './loadSaveComment.js';
+import { fetchData, saveData } from './loadSaveComment.js';
 
 const showComments = (movieData) => {
   const $ = document;
@@ -41,14 +41,21 @@ const showComments = (movieData) => {
   commentAddTitle.innerHTML = 'Add a comment';
 
   const nameInput = $.createElement('input');
+  nameInput.classList.add('commentName');
   nameInput.setAttribute('type', 'text');
   nameInput.setAttribute('placeholder', 'Your Name');
 
   const messageInput = $.createElement('textarea');
+  messageInput.classList.add('commentMessage');
   messageInput.setAttribute('placeholder', 'Enter your comment/message');
 
   const sendButton = $.createElement('button');
   sendButton.innerText = 'Send';
+  sendButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+    await saveData(movieData);
+    await fetchData(movieData);
+  });
 
   popCard.appendChild(closeButton);
   popCard.appendChild(newImage);
