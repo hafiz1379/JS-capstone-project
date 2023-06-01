@@ -3,7 +3,9 @@ import fetchData from './loadSaveReserve.js';
 const reserve = (movieData) => {
   const $ = document;
   const reserveCard = $.getElementById('reserveCard');
+  const bodyOverflow = $.getElementById('body');
   reserveCard.style.display = 'block';
+  bodyOverflow.style.overflow = 'hidden';
 
   const modalContent = $.createElement('div');
   modalContent.classList.add('modalContent');
@@ -14,6 +16,14 @@ const reserve = (movieData) => {
   span.onclick = () => {
     reserveCard.removeChild(modalContent);
     reserveCard.style.display = 'none';
+    bodyOverflow.style.overflow = 'auto';
+  };
+  window.onclick = (e) => {
+    if (e.target === reserveCard) {
+      reserveCard.removeChild(modalContent);
+      reserveCard.style.display = 'none';
+      bodyOverflow.style.overflow = 'auto';
+    }
   };
 
   const popImg = $.createElement('div');

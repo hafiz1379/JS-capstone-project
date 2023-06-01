@@ -234,3 +234,21 @@ h2 {
   width: 100%;
   gap: 2vh;
 }
+
+.reserveSection {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0;
+  align-items: center;
+  gap: 2vh;
+}
+
+.listReserve {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--button-blue);
+  width: 100%;
+  padding: 2vh 3vh;
+  align-items: center;
+}
+
