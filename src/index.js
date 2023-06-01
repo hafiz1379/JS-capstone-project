@@ -71,8 +71,8 @@ const createMovieCards = async () => {
     movieCardsContainer.appendChild(movieCard.card);
     movieCard.reserv.onclick = () => {
       reserveCard.style.display = 'block';
-      const aux = new Reserve(movieData);
-      reserveCard.appendChild(aux.createTemplate());
+      const templateCard = new Reserve(movieData);
+      reserveCard.appendChild(templateCard.createTemplate());
     };
   });
 };

@@ -7,6 +7,8 @@ export default class Reserve {
   }
 
   createTemplate() {
+    const reserveCard = document.getElementById('reserveCard');
+
     const modalContent = document.createElement('div');
     modalContent.classList.add('modalContent');
 
@@ -34,6 +36,10 @@ export default class Reserve {
     modalContent.appendChild(popUp);
     modalContent.appendChild(popImg);
     modalContent.appendChild(containerInfo);
+
+    span.onclick = () => {
+      reserveCard.style.display = 'none';
+    };
 
     return modalContent;
   }
