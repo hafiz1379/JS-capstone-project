@@ -1,7 +1,7 @@
 import './style.css';
 import Icon from './images/nitro-logo.png';
 import showComments from './modules/comment.js';
-import Reserve from './modules/reserve.js';
+import reserve from './modules/reserve.js';
 
 const $ = document;
 
@@ -11,7 +11,6 @@ logoImage.src = Icon;
 
 const apiUrl = 'https://api.tvmaze.com/shows';
 const movieCardsContainer = $.getElementById('movie-cards');
-const reserveCard = $.getElementById('reserveCard');
 
 const fetchMovieData = async (showId) => {
   const response = await fetch(`${apiUrl}/${showId}`);
@@ -36,6 +35,7 @@ const createMovieCard = (movieData) => {
 
   const image = $.createElement('img');
   image.src = movieData.image;
+
   const comment = $.createElement('button');
   comment.innerHTML = 'Comment';
 
@@ -48,6 +48,10 @@ const createMovieCard = (movieData) => {
   reserv.innerHTML = 'reserv';
   reserv.classList.add('reservBtn');
 
+  reserv.addEventListener('click', () => {
+    reserve(movieData);
+  });
+
   const genres = $.createElement('p');
   genres.innerHTML = `<strong>Genres:</strong> ${movieData.genres.join(', ')}`;
 
@@ -56,7 +60,7 @@ const createMovieCard = (movieData) => {
   card.appendChild(genres);
   card.appendChild(comment);
   card.appendChild(reserv);
-  return { card, reserv };
+  return card;
 };
 
 const createMovieCards = async () => {
@@ -68,12 +72,7 @@ const createMovieCards = async () => {
   shows.forEach(async (show) => {
     const movieData = await fetchMovieData(show.id);
     const movieCard = createMovieCard(movieData);
-    movieCardsContainer.appendChild(movieCard.card);
-    movieCard.reserv.onclick = () => {
-      reserveCard.style.display = 'block';
-      const templateCard = new Reserve(movieData);
-      reserveCard.appendChild(templateCard.createTemplate());
-    };
+    movieCardsContainer.appendChild(movieCard);
   });
 };
 
