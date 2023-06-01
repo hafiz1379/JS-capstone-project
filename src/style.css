@@ -208,7 +208,6 @@ h2 {
   margin-top: 3vh;
   padding: 20px;
   border: 5px solid var(--main-orange);
-  color: #fff;
 }
 
 .popUpR {
@@ -229,6 +228,7 @@ h2 {
 
 .containerInfo {
   display: flex;
+  background-color: var(--button-blue);
   flex-direction: column;
   padding: 2vh 5vh;
   width: 100%;
