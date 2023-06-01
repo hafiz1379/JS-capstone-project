@@ -24,7 +24,7 @@ const reserve = (movieData) => {
   const containerInfo = $.createElement('div');
   containerInfo.classList.add('containerInfo');
   containerInfo.innerHTML = `
-    <p><b>Title:</b> ${movieData.name}</p><p><b>Summary:</b> ${movieData.summary}</p><p><b>Genero:</b> ${movieData.genres}</p>
+    <p><b>Title:</b> ${movieData.name}</p><p><b>Summary:</b> ${movieData.summary}</p><p><b>Genres:</b> ${movieData.genres}</p>
   `;
 
   modalContent.appendChild(span);
