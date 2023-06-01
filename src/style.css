@@ -134,7 +134,8 @@ h2 {
 }
 
 .likes {
-  display: none;
+  display: flex;
+  justify-content: center;
 }
 
 .popUp {
