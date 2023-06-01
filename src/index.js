@@ -19,6 +19,7 @@ const fetchMovieData = async (showId) => {
   return {
     name: data.name,
     image: data.image.medium,
+    summary: data.summary,
     genres: data.genres,
     id: data.id,
     showStatus: data.status,
