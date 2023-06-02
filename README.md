@@ -66,7 +66,7 @@ The project is built with ES6 Js [Front-End].
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.tvmaze.com/api">TV API</a></li>
-    <li><a href="[https://www.tvmaze.com/api](https://microverse.notion.site/Involvement-API-869e60b5ad104603aa6db59e08150270)">Involvement API</a></li>
+    <li><a href="https://microverse.notion.site/Involvement-API-869e60b5ad104603aa6db59e08150270">Involvement API</a></li>
   </ul>
 </details>
 
