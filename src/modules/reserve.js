@@ -1,4 +1,4 @@
-import fetchData from './loadSaveReserve.js';
+import { fetchData, saveDataReserve } from './loadSaveReserve.js';
 
 const reserve = (movieData) => {
   const $ = document;
@@ -41,14 +41,30 @@ const reserve = (movieData) => {
 
   const reserveSection = $.createElement('div');
   reserveSection.classList.add('reserveSection');
-  const titleSection = $.createElement('h2');
-  titleSection.textContent = 'Reservations';
-  reserveSection.appendChild(titleSection);
+
+  const reserveForm = $.createElement('form');
+  reserveForm.classList.add('reserveForm');
+  reserveForm.innerHTML = `
+    <input type="text" id="nameReserve" name="nameReserve" placeholder="Add your name" required>
+    <input type="date" id="startDate" name="startDate" required>
+    <input type="date" id="endDate" name="endDate" required>
+  `;
+  const submitBtn = $.createElement('button');
+  submitBtn.classList.add('submitBtn');
+  submitBtn.textContent = 'Reserve';
+  reserveForm.appendChild(submitBtn);
+  submitBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await saveDataReserve(movieData);
+    reserveSection.innerHTML = '';
+    await fetchData(movieData);
+  });
 
   modalContent.appendChild(span);
   modalContent.appendChild(popImg);
   modalContent.appendChild(containerInfo);
   modalContent.appendChild(reserveSection);
+  modalContent.appendChild(reserveForm);
 
   reserveCard.appendChild(modalContent);
   fetchData(movieData);

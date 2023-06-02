@@ -260,3 +260,23 @@ h2 {
   align-items: center;
   gap: 1vh;
 }
+
+.reserveForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh;
+  gap: 2vh;
+}
+
+.reserveForm input {
+  width: 40vh;
+  padding: 0.5vh;
+}
+
+.submitBtn {
+  background: var(--main-orange);
+  border: 3px solid var(--header-blue);
+  padding: 1vh 2vh;
+  border-radius: 5px;
+}
