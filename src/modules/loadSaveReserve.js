@@ -1,14 +1,16 @@
+import counterReserve from './counterReserve.js';
+
 const fetchData = async (movieData) => {
   const API = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/X5Vx3TOWxyak1SgHIAAo/reservations?item_id=item${movieData.id}`;
   const reserveSection = document.querySelector('.reserveSection');
   const titleSection = document.createElement('h2');
-  titleSection.textContent = 'Reservations';
   const toAddReserve = document.createElement('div');
   toAddReserve.classList.add('listReserve');
   try {
     const response = await fetch(API);
     const data = await response.json();
     // Process the retrieved data
+    titleSection.textContent = `Reservations (${counterReserve(data)})`;
     data.forEach((element) => {
       reserveSection.appendChild(titleSection);
       toAddReserve.innerHTML += `
@@ -17,6 +19,7 @@ const fetchData = async (movieData) => {
       reserveSection.appendChild(toAddReserve);
     });
   } catch (error) {
+    titleSection.textContent = 'Reservations (0)';
     reserveSection.appendChild(titleSection);
     toAddReserve.innerHTML = `
     <h3><b>No reserve yet</b></h3>`;
