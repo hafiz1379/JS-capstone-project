@@ -20,7 +20,7 @@ body {
 nav {
   background-color: var(--header-blue);
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   font-size: 20px;
   height: 20vh;
   align-items: center;
@@ -28,6 +28,8 @@ nav {
 
 .logo {
   height: 15vh;
+  padding-right: 100px;
+  padding-left: 50px;
 }
 
 ul {
