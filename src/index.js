@@ -2,6 +2,7 @@ import './style.css';
 import Icon from './images/nitro-logo.png';
 import showComments from './modules/comment.js';
 import reserve from './modules/reserve.js';
+import updateMovieCardCount from './modules/movieCount.js';
 
 const $ = document;
 
@@ -108,6 +109,8 @@ const createMovieCards = async () => {
   const response = await fetch(`${apiUrl}`);
   const showData = await response.json();
   const shows = showData.slice(0, 20);
+  const count = shows.length;
+  updateMovieCardCount(count);
 
   // Create movie cards for each TV show
   shows.forEach(async (show) => {
