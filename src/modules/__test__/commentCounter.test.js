@@ -1,8 +1,7 @@
-import commentCounter from "../commentCounter.js";
+import commentCounter from '../commentCounter.js';
 
-
-const commentNumber = document.createElement('div'); 
-commentNumber.classList.add('commentNumber'); 
+const commentNumber = document.createElement('div');
+commentNumber.classList.add('commentNumber');
 document.body.appendChild(commentNumber);
 
 // Positive test case
