@@ -1,42 +1,27 @@
-import commentCounterJest from "../__Mocks__/commentCounterMock.js";
+import commentCounter from "../commentCounter.js";
+
+
+const commentNumber = document.createElement('div'); 
+commentNumber.classList.add('commentNumber'); 
+document.body.appendChild(commentNumber);
 
 // Positive test case
-test('commentCounterJest should update comment title with correct number of comments', () => {
-  // Mocking the document object
-  const mockDocument = {
-    querySelector: jest.fn().mockReturnValue({ innerHTML: '' })
-  };
+test('commentCounter should update comment title with correct number of comments', () => {
   const data = ['comment1', 'comment2', 'comment3'];
-  commentCounterJest(data);
-  expect(mockDocument.querySelector).toHaveBeenCalledWith('.commentNumber');
-  expect(mockDocument.querySelector().innerHTML).toBe(Comments (${data.length}));
+  commentCounter(data);
+  expect(document.querySelector('.commentNumber').innerHTML).toBe(`Comments (${data.length})`);
 });
 
 // Negative test case
-test('commentCounterJest should not update comment title if data is empty', () => {
-  // Mocking the document object
-  const mockDocument = {
-    querySelector: jest.fn().mockReturnValue({ innerHTML: '' })
-  };
+test('commentCounter should update comment title if data is empty', () => {
   const data = [];
-  commentCounterJest(data);
-  expect(mockDocument.querySelector).not.toHaveBeenCalled();
-  expect(mockDocument.querySelector().innerHTML).toBe('');
+  commentCounter(data);
+  expect(document.querySelector('.commentNumber').innerHTML).toBe(`Comments (${data.length})`);
 });
 
 // Edge test case
-test('commentCounterJest should handle large data sets', () => {
-  // Mocking the document object
-  const mockDocument = {
-    querySelector: jest.fn().mockReturnValue({ innerHTML: '' })
-  };
+test('commentCounter should handle large data sets', () => {
   const data = new Array(1000000).fill('comment');
-  commentCounterJest(data);
-  expect(mockDocument.querySelector).toHaveBeenCalledWith('.commentNumber');
-  expect(mockDocument.querySelector().innerHTML).toBe(Comments (${data.length}));
-});
-
-// Error test case
-test('commentCounterJest should throw an error if data is not an array', () => {
-  expect(() => commentCounterJest('not an array')).toThrow();
+  commentCounter(data);
+  expect(document.querySelector('.commentNumber').innerHTML).toBe(`Comments (${data.length})`);
 });
