@@ -24,5 +24,5 @@ describe('Testing reservations counter ', () => {
 
   test('The fifth test movie has zero reservations, the function is exptected to return the numerical value 0.', () => {
     expect(counterReserveJest(film5)).toBe(0);
-  })
+  });
 });
