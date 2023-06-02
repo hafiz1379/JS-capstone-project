@@ -32,6 +32,7 @@ const showComments = (movieData) => {
   premiered.innerHTML = `premiered: ${movieData.premiered}`;
 
   const commentTitle = $.createElement('h3');
+  commentTitle.classList.add('commentNumber');
   commentTitle.innerHTML = 'Comments';
 
   const commentSection = $.createElement('div');
@@ -44,10 +45,12 @@ const showComments = (movieData) => {
   nameInput.classList.add('commentName');
   nameInput.setAttribute('type', 'text');
   nameInput.setAttribute('placeholder', 'Your Name');
+  nameInput.required = true;
 
   const messageInput = $.createElement('textarea');
   messageInput.classList.add('commentMessage');
   messageInput.setAttribute('placeholder', 'Enter your comment/message');
+  messageInput.required = true;
 
   const sendButton = $.createElement('button');
   sendButton.innerText = 'Send';
