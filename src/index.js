@@ -2,7 +2,7 @@ import './style.css';
 import Icon from './images/nitro-logo.png';
 import showComments from './modules/comment.js';
 import reserve from './modules/reserve.js';
-import updateMovieCardCount from './modules/movieCount.js';
+import updateMovieCardCount from './modules/__Mocks__/movieCount.js';
 
 const $ = document;
 
