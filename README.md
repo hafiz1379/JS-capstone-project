@@ -35,6 +35,8 @@
 Functions: Add comments | Add reservations 
 The project is built with ES6 Js [Front-End].
 
+For a quick demonstration and explenation of how out code works you can check [this video](https://youtu.be/d9Y6SHEflH0)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -82,7 +84,7 @@ The project is built with ES6 Js [Front-End].
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 **Open the live-demo of the project**
-[Project Link][https://hafiz1379.github.io/JS-capstone-project/dist/]
+[Project Link](https://hafiz1379.github.io/JS-capstone-project/dist/)
 
 <!-- GETTING STARTED -->
 
