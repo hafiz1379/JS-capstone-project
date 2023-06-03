@@ -85,7 +85,7 @@ const createMovieCard = async (movieData, showId) => {
   });
 
   const reserv = $.createElement('button');
-  reserv.innerHTML = 'reserv';
+  reserv.innerHTML = 'reservations';
   reserv.classList.add('reservBtn');
 
   reserv.addEventListener('click', () => {

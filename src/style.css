@@ -20,7 +20,7 @@ body {
 nav {
   background-color: var(--header-blue);
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   font-size: 20px;
   height: 20vh;
   align-items: center;
@@ -28,6 +28,8 @@ nav {
 
 .logo {
   height: 15vh;
+  padding-right: 100px;
+  padding-left: 50px;
 }
 
 ul {
@@ -59,7 +61,7 @@ footer {
 #footer {
   background-color: var(--header-blue);
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   height: auto;
   padding: 2vh;
   align-items: center;
@@ -72,16 +74,6 @@ footer {
   border: 2px solid black;
   font-size: 25px;
   font-weight: 300;
-}
-
-#copyright {
-  background-color: var(--main-orange);
-  padding: 1vh;
-  border-radius: 20px;
-  border: 2px solid black;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 100;
 }
 
 #movie-cards {
