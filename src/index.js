@@ -64,7 +64,7 @@ const createMovieCard = async (movieData, showId) => {
 
   const likeBtn = document.createElement('button');
   likeBtn.classList.add('likes');
-  likeBtn.innerHTML = 'Like';
+  likeBtn.innerHTML = '<i class="fa fa-heart-o"></i>';
 
   const likes = document.createElement('p');
   likes.innerHTML = 'Likes: 0';
