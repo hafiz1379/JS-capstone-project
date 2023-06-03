@@ -1,3 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-blue: #00296b;
+  --body-blue: #00509d;
+  --button-blue: #8ecae6;
+  --main-orange: #fb8500;
+  --button-yellow: #ffd500;
+}
+
 body {
-    background-color: bisque;
+  background-color: var(--body-blue);
+  font-family: "Zilla Slab", sans-serif;
+}
+
+nav {
+  background-color: var(--header-blue);
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
+  height: 20vh;
+  align-items: center;
+}
+
+.logo {
+  height: 15vh;
+  padding-right: 100px;
+  padding-left: 50px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  gap: 100px;
+}
+
+li {
+  width: 120px;
+  background-color: var(--main-orange);
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  margin-bottom: 0;
+}
+
+#footer {
+  background-color: var(--header-blue);
+  display: flex;
+  justify-content: flex-start;
+  height: auto;
+  padding: 2vh;
+  align-items: center;
+}
+
+#textFooter {
+  background-color: var(--main-orange);
+  padding: 1vh;
+  border-radius: 20px;
+  border: 2px solid black;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+#movie-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.movie-card {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 21%;
+}
+
+.movie-card p {
+  display: flex;
+  width: 100%;
+  background-color: var(--button-blue);
+  border: 1px solid #d1d1d1;
+  color: #000;
+}
+
+.movie-card button {
+  background-color: var(--button-yellow);
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid black;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.movie-card button .likes {
+  background-color: #000;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid black;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.movie-card img {
+  height: 100%;
+  cursor: pointer;
+  border-radius: 20px 20px 0 0;
+}
+
+.movie-card:hover {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  transition: 0.4s;
+}
+
+h2 {
+  color: #fff;
+}
+
+.popUp {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.popCard {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 50%;
+  border: 3px solid var(--main-orange);
+  padding: 10px;
+  text-align: center;
+  background-color: var(--body-blue);
+  color: #fff;
+  overflow-y: scroll;
+}
+
+.commentImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commentSection {
+  background-color: var(--button-blue);
+  width: 100%;
+  height: 20vh;
+  overflow-y: scroll;
+  text-align: left;
+  color: #000;
+  font-weight: 700;
+}
+
+.closeButton {
+  width: fit-content;
+  font-size: xx-large;
+  background-color: transparent;
+  border-width: 0;
+  align-self: flex-end;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+  background-color: var(--button-yellow);
+}
+
+#reserveCard {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(177, 174, 174, 0.8);
+}
+
+.modalContent {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  background-color: var(--body-blue);
+  margin: auto;
+  margin-top: 3vh;
+  padding: 20px;
+  border: 5px solid var(--main-orange);
+}
+
+.popUpR {
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.popImg {
+  display: flex;
+  justify-content: center;
+  padding: 3vh 0;
+}
+
+.imgReserve {
+  width: 25%;
+}
+
+.containerInfo {
+  display: flex;
+  background-color: var(--button-blue);
+  flex-direction: column;
+  padding: 2vh 5vh;
+  width: 100%;
+  gap: 2vh;
+}
+
+.reserveSection {
+  display: flex;
+  flex-direction: column;
+  padding: 2vh 0;
+  align-items: center;
+  gap: 2vh;
+}
+
+.listReserve {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--button-blue);
+  width: 100%;
+  padding: 2vh 3vh;
+  align-items: center;
+  gap: 1vh;
+}
+
+.reserveForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh;
+  gap: 2vh;
+}
+
+.reserveForm input {
+  width: 40vh;
+  padding: 0.5vh;
+}
+
+.submitBtn {
+  background: var(--main-orange);
+  border: 3px solid var(--header-blue);
+  padding: 1vh 2vh;
+  border-radius: 5px;
 }
