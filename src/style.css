@@ -107,6 +107,12 @@ footer {
   font-size: 16px;
 }
 
+.likes {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
 .movie-card button .likes {
   background-color: #000;
   height: 35px;
@@ -132,12 +138,6 @@ footer {
 
 h2 {
   color: #fff;
-}
-
-.likes {
-  display: flex;
-  justify-content: center;
-  padding-top: 4px;
 }
 
 .popUp {
