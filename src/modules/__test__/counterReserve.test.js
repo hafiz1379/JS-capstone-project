@@ -1,7 +1,7 @@
 /* @jest-environment jsdom */
 
 import {
-  film1, film2, film3, film4,
+  film1, film2, film3, film4, film5,
 } from '../__Mocks__/reservationsMock.js';
 import counterReserveJest from '../__Mocks__/counterReserveMock.js';
 
@@ -20,5 +20,9 @@ describe('Testing reservations counter ', () => {
 
   test('The fourth test movie has three reservations, the function is expected to return the numerical value 3.', () => {
     expect(counterReserveJest(film4)).toBe(3);
+  });
+
+  test('The fifth test movie has zero reservations, the function is exptected to return the numerical value 0.', () => {
+    expect(counterReserveJest(film5)).toBe(0);
   });
 });
