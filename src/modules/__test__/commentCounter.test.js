@@ -15,7 +15,7 @@ test('commentCounter should update comment title with correct number of comments
 test('commentCounter should update comment title if data is empty', () => {
   const data = [];
   commentCounter(data);
-  expect(document.querySelector('.commentNumber').innerHTML).toBe(`Comments (0)`);
+  expect(document.querySelector('.commentNumber').innerHTML).toBe('Comments (0)');
 });
 
 // Edge test case
