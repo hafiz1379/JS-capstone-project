@@ -35,6 +35,7 @@
 Functions: Add comments | Add reservations 
 The project is built with ES6 Js [Front-End].
 
+For a quick demonstration and explenation of how out code works you can check [this video](https://youtu.be/d9Y6SHEflH0)
 
 ## 🛠 Built With <a name="built-with"></a>
 
